@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタムCSS変数 */
+:root {
+  --gradient-primary: linear-gradient(135deg, #00B900 0%, #00A000 100%);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ベーススタイル */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* コンポーネントスタイル */
+@layer components {
+  .gradient-bg {
+    background: var(--gradient-primary);
+  }
+  
+  .feature-card {
+    @apply bg-white rounded-lg p-8 shadow transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .plan-card {
+    @apply bg-white rounded-xl shadow-lg p-8 flex flex-col transition-all duration-300;
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .popular-plan {
+    @apply border-2 border-green-600 relative;
+  }
+  
+  .btn-primary {
+    @apply bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition duration-300;
+  }
+  
+  .btn-primary-inverse {
+    @apply bg-white text-green-600 px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-green-50 transition duration-300;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-green-600 transition duration-300;
+  }
+  
+  .btn-outline {
+    @apply bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-bold hover:bg-gray-300 transition duration-300;
+  }
+  
+  .btn-dark {
+    @apply bg-gray-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-black transition duration-300;
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500;
+  }
+  
+  .error-message {
+    @apply text-red-500 text-sm mt-1 hidden;
+  }
+  
+  .error-message.show {
+    @apply block;
+  }
+}
+
+/* ユーティリティ */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

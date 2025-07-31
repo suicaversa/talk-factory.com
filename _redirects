@@ -1,0 +1,6 @@
+# SPA fallback
+/* /index.html 200
+
+# Force HTTPS
+http://kentei-builder.com/* https://kentei-builder.com/:splat 301!
+http://www.kentei-builder.com/* https://kentei-builder.com/:splat 301! 

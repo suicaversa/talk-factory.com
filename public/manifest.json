@@ -1,0 +1,27 @@
+{
+  "name": "検定ビルダー",
+  "short_name": "検定ビルダー",
+  "description": "あなたのオリジナル検定を簡単に作成・公開",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/manifest-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/manifest-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "education", "productivity"],
+  "lang": "ja",
+  "dir": "ltr"
+} 
