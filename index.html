@@ -71,7 +71,7 @@
     <header class="gradient-bg text-white">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="/assets/logo.png" alt="トークファクトリー" class="h-10 w-auto">
+                <img src="/assets/logo.png" alt="トークファクトリー" class="h-10 w-auto filter brightness-0 invert">
             </div>
             <nav class="hidden md:flex space-x-10">
                 <a href="#features" class="hover:text-green-200 transition-colors">機能</a>
@@ -88,7 +88,7 @@
     </header>
 
     <!-- ヒーロー部分 -->
-    <section class="gradient-bg text-white py-20 relative overflow-hidden min-h-[600px]">
+    <section class="gradient-bg text-white py-20 relative overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2">
@@ -143,20 +143,19 @@
                     </div>
                 </div>
                 
-                <!-- 右側：人物画像 -->
-                <div class="lg:w-1/2 relative h-full flex items-end">
-                    <div class="relative w-full">
-                        <!-- 背景の装飾 -->
-                        <div class="absolute -top-10 -right-10 w-64 h-64 bg-yellow-400 rounded-full opacity-20 blur-3xl"></div>
-                        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-green-400 rounded-full opacity-20 blur-3xl"></div>
-                        
-                        <!-- 人物画像 -->
-                        <img src="/assets/human.png" alt="トークファクトリーで課題解決" class="relative z-10 w-full h-auto max-h-[600px] object-contain object-bottom drop-shadow-2xl">
-                        
-                        <!-- フローティングバッジ -->
-                        <div class="absolute top-10 right-0 bg-white text-green-600 p-3 rounded-xl shadow-lg transform rotate-3">
-                            <p class="text-xs font-bold">公開記念<br>キャンペーン</p>
-                            <p class="text-lg font-black">月額0円の<br>フリープラン<br>登場！</p>
+                <!-- 右側：動画 -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-2 w-full max-w-[700px]">
+                        <!-- 動画エリア -->
+                        <div class="relative">
+                            <video 
+                                class="w-full h-auto rounded-lg shadow-lg" 
+                                controls 
+                                preload="metadata"
+                                aria-label="トークファクトリーのデモ動画">
+                                <source src="/assets/videos/demo.mp4" type="video/mp4">
+                                <p class="text-center text-white">お使いのブラウザは動画の再生に対応していません。</p>
+                            </video>
                         </div>
                     </div>
                 </div>
