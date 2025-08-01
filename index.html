@@ -259,9 +259,9 @@
                 <p class="text-gray-600 max-w-2xl mx-auto">すべての機能が使えるシンプルな料金体系。固定メッセージは無制限、AIクレジットに応じてプランをお選びください。</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-6 justify-center">
                 <!-- フリープラン -->
-                <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col lg:w-1/4">
+                <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col lg:w-1/3 max-w-sm">
                     <div class="mb-8">
                         <h3 class="text-2xl font-bold mb-2">フリー</h3>
                         <p class="text-gray-600">まずは無料で体験</p>
@@ -302,7 +302,7 @@
                 </div>
 
                 <!-- スタータープラン -->
-                <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col border-2 border-green-600 lg:w-1/4">
+                <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col border-2 border-green-600 lg:w-1/3 max-w-sm">
                     <div class="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-bold inline-block self-start mb-4">人気</div>
                     <div class="mb-8">
                         <h3 class="text-2xl font-bold mb-2">スターター</h3>
@@ -340,7 +340,7 @@
                 </div>
 
                 <!-- プロプラン -->
-                <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col lg:w-1/4">
+                <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col lg:w-1/3 max-w-sm">
                     <div class="mb-8">
                         <h3 class="text-2xl font-bold mb-2">プロ</h3>
                         <p class="text-gray-600">中〜大規模事業者向け</p>
@@ -607,11 +607,6 @@
             });
         });
 
-        // フォーム送信
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('お問い合わせありがとうございます。後日担当者よりご連絡いたします。');
-        });
     </script>
 </body>
 </html>
