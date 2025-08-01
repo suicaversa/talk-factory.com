@@ -259,7 +259,7 @@
                 <p class="text-gray-600 max-w-2xl mx-auto">すべての機能が使えるシンプルな料金体系。固定メッセージは無制限、AIクレジットに応じてプランをお選びください。</p>
             </div>
 
-            <div class="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-6 justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- フリープラン -->
                 <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col lg:w-1/4">
                     <div class="mb-8">
@@ -339,14 +339,14 @@
                     </a>
                 </div>
 
-                <!-- ビジネスプラン -->
+                <!-- プロプラン -->
                 <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col lg:w-1/4">
                     <div class="mb-8">
-                        <h3 class="text-2xl font-bold mb-2">ビジネス</h3>
-                        <p class="text-gray-600">中規模事業者向け</p>
+                        <h3 class="text-2xl font-bold mb-2">プロ</h3>
+                        <p class="text-gray-600">中〜大規模事業者向け</p>
                     </div>
                     <div class="mb-8">
-                        <span class="text-4xl font-bold">¥19,800</span>
+                        <span class="text-4xl font-bold">¥29,800</span>
                         <span class="text-gray-600">/月（税別）</span>
                     </div>
                     <ul class="mb-8 space-y-4 flex-grow">
@@ -356,7 +356,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>月間30,000AIクレジット</span>
+                            <span>月間50,000AIクレジット</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
@@ -365,43 +365,6 @@
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
                             <span>優先サポート</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>固定メッセージ無制限（無料）</span>
-                        </li>
-                    </ul>
-                    <a href="https://forms.gle/jhaJGow4AacYq8tw9" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white py-3 px-6 rounded-lg font-bold text-center hover:bg-green-700 transition duration-300">
-                        お問い合わせ
-                    </a>
-                </div>
-
-                <!-- エンタープライズプラン -->
-                <div class="plan-card bg-white rounded-xl shadow-lg p-8 flex flex-col lg:w-1/4">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-bold mb-2">エンタープライズ</h3>
-                        <p class="text-gray-600">大規模事業者向け</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-4xl font-bold">¥49,800</span>
-                        <span class="text-gray-600">/月（税別）</span>
-                    </div>
-                    <ul class="mb-8 space-y-4 flex-grow">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span class="font-bold text-green-600">全機能利用可能</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>月間100,000AIクレジット</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>分析レポート</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>専任サポート</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
@@ -448,11 +411,11 @@
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-info-circle text-green-500 mr-2 mt-1"></i>
-                                <span>AIクレジットは受信解析・返信生成で消費</span>
+                                <span>ユーザーからのメッセージ受信時に1クレジット消費</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-info-circle text-green-500 mr-2 mt-1"></i>
-                                <span>1対話 = 約2クレジット消費（受信解析1 + 返信生成1）</span>
+                                <span>AIメッセージ送信時に1クレジット消費</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-info-circle text-green-500 mr-2 mt-1"></i>
@@ -559,28 +522,28 @@
 
             <div class="max-w-3xl mx-auto space-y-6">
                 <div class="bg-white rounded-lg p-6 shadow">
-                    <h3 class="text-xl font-bold mb-2">技術的な知識がなくても検定を作れますか？</h3>
-                    <p class="text-gray-600">はい、プログラミングなどの専門知識は一切必要ありません。直感的なドラッグ＆ドロップ式のインターフェースで、誰でも簡単に検定を作成できます。</p>
+                    <h3 class="text-xl font-bold mb-2">技術的な知識がなくても利用できますか？</h3>
+                    <p class="text-gray-600">はい、プログラミングなどの専門知識は一切必要ありません。直感的な管理画面で、誰でも簡単にAI自動応答を設定できます。テンプレートも豊富に用意されています。</p>
                 </div>
 
                 <div class="bg-white rounded-lg p-6 shadow">
-                    <h3 class="text-xl font-bold mb-2">記述式問題は作成できますか？</h3>
-                    <p class="text-gray-600">はい、記述式問題の作成と採点が可能です。採点基準を文章で設定することで、AIが自動的に受験者の回答を評価します。例えば「正解のキーワードが含まれているか」「文章の構成が適切か」など、複数の観点から採点基準を設定できます。これにより、主観的な回答も正確に評価し、受験者に詳細なフィードバックを提供することができます。</p>
+                    <h3 class="text-xl font-bold mb-2">AIクレジットはどのように消費されますか？</h3>
+                    <p class="text-gray-600">ユーザーからのメッセージ受信時に1クレジット、AIメッセージ送信時に1クレジット消費されます。固定メッセージ（テンプレート配信）は無制限で追加料金はかかりません。</p>
                 </div>
 
                 <div class="bg-white rounded-lg p-6 shadow">
-                    <h3 class="text-xl font-bold mb-2">テストを外部公開して収益を得ることは可能ですか？</h3>
-                    <p class="text-gray-600">可能です。例えば◯◯検定のようなテストを作成し、検定の受験料を徴収する機能があります。手数料を除いた金額があなたに還元されます（レベニューシェア型）。個別契約が必要となりますので、お問い合わせください。</p>
+                    <h3 class="text-xl font-bold mb-2">既存のLINE公式アカウントと連携できますか？</h3>
+                    <p class="text-gray-600">はい、既存のLINE公式アカウントとワンクリックで連携可能です。複数のアカウントを一括管理することもできます。連携後すぐにAI機能をご利用いただけます。</p>
                 </div>
 
                 <div class="bg-white rounded-lg p-6 shadow">
-                    <h3 class="text-xl font-bold mb-2">どのような問題形式に対応していますか？</h3>
-                    <p class="text-gray-600">多肢選択式、記述式、画像選択など、様々な形式に対応しています。記述式問題はAIによる自動採点が利用可能です。</p>
+                    <h3 class="text-xl font-bold mb-2">どのような業種で活用できますか？</h3>
+                    <p class="text-gray-600">小売・EC、美容・ヘルスケア、教育、飲食、不動産など、あらゆる業種でご活用いただけます。業種別のテンプレートもご用意しています。</p>
                 </div>
 
                 <div class="bg-white rounded-lg p-6 shadow">
-                    <h3 class="text-xl font-bold mb-2">無料プランからの乗り換えは簡単ですか？</h3>
-                    <p class="text-gray-600">はい、有料プランへの切り替えをご希望の場合は、お問い合わせフォームよりご連絡ください。担当者よりお手続きについてご案内いたします。既存のデータはすべて引き継がれますので、ご安心ください。</p>
+                    <h3 class="text-xl font-bold mb-2">無料プランから有料プランへの移行は簡単ですか？</h3>
+                    <p class="text-gray-600">はい、管理画面からワンクリックでプラン変更が可能です。既存の設定やデータはすべて引き継がれ、即座に追加機能をご利用いただけます。</p>
                 </div>
             </div>
         </div>
