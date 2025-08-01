@@ -123,21 +123,26 @@
                     
                     <!-- モバイル用LINEデモ -->
                     <div class="lg:hidden mb-8">
-                        <div class="bg-white rounded-2xl shadow-xl p-4 max-w-sm mx-auto">
-                            <div class="bg-gray-100 rounded-t-xl p-3">
-                                <div class="flex items-center mb-2">
-                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mobile-chat-icon">店</div>
-                                    <span class="ml-2 font-bold text-gray-800 mobile-chat-title">美容室トークファクトリー</span>
-                                </div>
-                                <select class="w-full text-xs bg-white border border-gray-300 rounded px-2 py-1" id="mobile-scenario-select">
-                                    <option value="beauty">美容室の予約</option>
-                                    <option value="restaurant">飲食店の予約</option>
-                                    <option value="clinic">クリニックの問診</option>
-                                    <option value="ec">ECの商品相談</option>
-                                </select>
+                        <div class="bg-white rounded-2xl shadow-xl max-w-sm mx-auto overflow-hidden">
+                            <div class="bg-gray-100 p-3 flex items-center">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mobile-chat-icon">美</div>
+                                <span class="ml-2 font-bold text-gray-800 mobile-chat-title">美容BOT by トークファクトリー</span>
                             </div>
-                            <div class="bg-gray-50 p-4 h-96 overflow-y-auto space-y-3" id="mobile-chat-demo">
+                            <div class="bg-gray-50 p-4 h-80 overflow-y-auto space-y-3" id="mobile-chat-demo">
                                 <!-- チャットメッセージはJSで動的に生成 -->
+                            </div>
+                            <div class="bg-white border-t p-3">
+                                <div class="flex space-x-2">
+                                    <button class="flex-1 bg-green-500 text-white text-xs py-2 px-3 rounded-full hover:bg-green-600 transition scenario-btn" data-scenario="beauty" data-mobile="true">
+                                        美容相談
+                                    </button>
+                                    <button class="flex-1 bg-gray-200 text-gray-700 text-xs py-2 px-3 rounded-full hover:bg-gray-300 transition scenario-btn" data-scenario="reservation" data-mobile="true">
+                                        予約
+                                    </button>
+                                    <button class="flex-1 bg-gray-200 text-gray-700 text-xs py-2 px-3 rounded-full hover:bg-gray-300 transition scenario-btn" data-scenario="clinic" data-mobile="true">
+                                        問診
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -172,23 +177,26 @@
                 
                 <!-- PC用LINEデモ -->
                 <div class="hidden lg:flex w-full lg:w-1/2 justify-center">
-                    <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-[400px]">
-                        <div class="bg-gray-100 rounded-t-xl p-4">
-                            <div class="flex items-center mb-3">
-                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold pc-chat-icon">店</div>
-                                <span class="ml-3 font-bold text-gray-800 text-lg pc-chat-title">美容室トークファクトリー</span>
-                            </div>
-                            <select class="w-full text-sm bg-white border border-gray-300 rounded px-3 py-2" id="pc-scenario-select">
-                                <option value="beauty">美容室の予約</option>
-                                <option value="restaurant">飲食店の予約</option>
-                                <option value="clinic">クリニックの問診</option>
-                                <option value="ec">ECの商品相談</option>
-                            </select>
+                    <div class="bg-white rounded-2xl shadow-xl w-full max-w-[400px] overflow-hidden">
+                        <div class="bg-gray-100 p-4 flex items-center">
+                            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold pc-chat-icon">美</div>
+                            <span class="ml-3 font-bold text-gray-800 text-lg pc-chat-title">美容BOT by トークファクトリー</span>
                         </div>
-                        <div class="bg-gray-50 p-4 h-[500px] overflow-y-auto space-y-4" id="pc-chat-demo">
+                        <div class="bg-gray-50 p-4 h-[450px] overflow-y-auto space-y-4" id="pc-chat-demo">
                             <!-- チャットメッセージはJSで動的に生成 -->
                         </div>
-                        <div class="p-4 border-t bg-white rounded-b-xl">
+                        <div class="bg-white border-t p-4">
+                            <div class="flex space-x-3 mb-3">
+                                <button class="flex-1 bg-green-500 text-white text-sm py-2 px-4 rounded-full hover:bg-green-600 transition scenario-btn" data-scenario="beauty" data-mobile="false">
+                                    美容相談
+                                </button>
+                                <button class="flex-1 bg-gray-200 text-gray-700 text-sm py-2 px-4 rounded-full hover:bg-gray-300 transition scenario-btn" data-scenario="reservation" data-mobile="false">
+                                    予約
+                                </button>
+                                <button class="flex-1 bg-gray-200 text-gray-700 text-sm py-2 px-4 rounded-full hover:bg-gray-300 transition scenario-btn" data-scenario="clinic" data-mobile="false">
+                                    問診
+                                </button>
+                            </div>
                             <p class="text-xs text-gray-500 text-center">AIが顧客情報を参照して自動返信</p>
                         </div>
                     </div>
@@ -624,55 +632,47 @@
         // チャットシナリオデータ
         const scenarios = {
             beauty: {
-                title: '美容室トークファクトリー',
+                title: '美容BOT by トークファクトリー',
+                icon: '美',
+                messages: [
+                    { type: 'bot', text: 'こんにちは！本日はお肌のお悩み相談でしょうか？' },
+                    { type: 'user', text: '最近、肌の乾燥が気になって...' },
+                    { type: 'bot', text: '田中様、乾燥のお悩みですね。前回は混合肌とお伺いしていましたが、季節の変わり目で乾燥が強くなってきた感じでしょうか？' },
+                    { type: 'user', text: 'そうなんです。特に頬のあたりがカサカサして' },
+                    { type: 'bot', text: '頬の乾燥は辛いですよね。田中様の肌質でしたら、セラミド配合の高保湿美容液がおすすめです。特に当店で人気の商品をご紹介しますね✨' },
+                    { type: 'bot', text: '【おすすめ商品】\n高保湿セラミド美容液 50ml\n通常価格¥8,800→LINE限定¥7,920\n\n商品詳細はこちら👇\nhttps://beauty-shop.example/serum-001' },
+                    { type: 'user', text: 'これ良さそう！他にもケア方法はありますか？' },
+                    { type: 'bot', text: '併せて洗顔後すぐに化粧水で水分補給し、美容液→クリームの順でケアすると効果的です。週2回のシートマスクもおすすめです！詳しいケア方法の動画もお送りしますね📹' }
+                ]
+            },
+            reservation: {
+                title: '美容室 予約BOT',
                 icon: '店',
                 messages: [
                     { type: 'bot', text: 'こんにちは！ご予約のご相談ですか？' },
                     { type: 'user', text: 'はい、カットとカラーをお願いしたいです' },
-                    { type: 'bot', text: 'かしこまりました。田中様ですね。前回から2ヶ月ほど経っていますが、今回もいつものブラウン系のカラーでよろしいですか？' },
+                    { type: 'bot', text: 'かしこまりました。山田様ですね。前回から2ヶ月ほど経っていますが、今回もいつものブラウン系のカラーでよろしいですか？' },
                     { type: 'user', text: '今回は少し明るめにしたいです' },
                     { type: 'bot', text: '承知いたしました！明るめのブラウンですね。ご希望の日時はございますか？今週ですと、金曜の午後と土曜の午前中に空きがあります。' },
                     { type: 'user', text: '金曜の15時はどうですか？' },
-                    { type: 'bot', text: '金曜日の15時で承りました！カットとカラーで約2時間半ほどお時間をいただきます。当日お待ちしております😊' }
-                ]
-            },
-            restaurant: {
-                title: 'レストラン トークファクトリー',
-                icon: '食',
-                messages: [
-                    { type: 'bot', text: 'いらっしゃいませ！ご予約を承ります。' },
-                    { type: 'user', text: '今週の土曜日、19時から4名でお願いします' },
-                    { type: 'bot', text: '土曜日の19時、4名様ですね。山田様、前回は個室をご利用いただきましたが、今回も個室をご希望でしょうか？' },
-                    { type: 'user', text: 'はい、個室でお願いします' },
-                    { type: 'bot', text: '承知いたしました。アレルギーについて確認させてください。前回は海老アレルギーの方がいらっしゃいましたが、今回も同様でしょうか？' },
-                    { type: 'user', text: '今回は大丈夫です' },
-                    { type: 'bot', text: '個室を確保いたしました！土曜日19時にお待ちしております。当日のコース料理もご用意可能です。ご来店をお待ちしております🍷' }
+                    { type: 'bot', text: '金曜日の15時で承りました！カットとカラーで約2時間半ほどお時間をいただきます。前回同様、田中スタイリストでよろしいですか？' },
+                    { type: 'user', text: 'はい、お願いします' },
+                    { type: 'bot', text: '予約完了しました！当日お待ちしております😊\n\n【予約内容】\n日時：12月15日(金) 15:00\n施術：カット＋カラー\n担当：田中スタイリスト\n\n変更・キャンセルはこちらのLINEから24時間受付中です。' }
                 ]
             },
             clinic: {
-                title: '内科クリニック トークファクトリー',
+                title: '内科クリニック 問診BOT',
                 icon: '医',
                 messages: [
                     { type: 'bot', text: 'こんにちは。本日はどのような症状でお困りですか？' },
                     { type: 'user', text: '咳が続いていて、診察をお願いしたいです' },
                     { type: 'bot', text: '咳の症状ですね。いつ頃から続いていますか？また、発熱はございますか？' },
                     { type: 'user', text: '3日前からで、熱は37.5度くらいです' },
-                    { type: 'bot', text: '3日前から咳と微熱があるのですね。本日の15:30に空きがございます。鈴木様の保険証は前回から変更ございませんか？' },
-                    { type: 'user', text: '変更ありません。15:30でお願いします' },
-                    { type: 'bot', text: '15:30で予約を承りました。念のため、お薬手帳をお持ちください。症状が悪化した場合は、すぐにご連絡ください。お大事になさってください🏥' }
-                ]
-            },
-            ec: {
-                title: 'ファッションEC トークファクトリー',
-                icon: '服',
-                messages: [
-                    { type: 'bot', text: 'こんにちは！商品についてのご相談ですか？' },
-                    { type: 'user', text: 'ワンピースを探しています' },
-                    { type: 'bot', text: '佐藤様、前回は花柄のワンピースをご購入いただきましたね。今回はどのようなスタイルをお探しですか？' },
-                    { type: 'user', text: 'オフィスでも着られるシンプルなものがいいです' },
-                    { type: 'bot', text: 'オフィスカジュアルですね！佐藤様のサイズMで、ネイビーとグレーの新作がございます。前回同様、膝丈のものがお好みでしょうか？' },
-                    { type: 'user', text: 'はい、膝丈でネイビーを見せてください' },
-                    { type: 'bot', text: '人気のネイビーワンピースをご紹介します！[商品リンク] ストレッチ素材で着心地も抜群です。いつものように送料無料でお届けします。いかがでしょうか？👗' }
+                    { type: 'bot', text: '3日前から咳と微熱があるのですね。他に症状はございますか？（例：喉の痛み、鼻水、頭痛など）' },
+                    { type: 'user', text: '喉も少し痛いです' },
+                    { type: 'bot', text: '承知しました。鈴木様、前回の診察から変わったお薬の服用や、アレルギーの変化はございませんか？' },
+                    { type: 'user', text: '特に変わりありません' },
+                    { type: 'bot', text: '本日の15:30に診察の空きがございます。保険証とお薬手帳をお持ちください。症状が悪化した場合は、すぐにご連絡ください。お大事になさってください🏥' }
                 ]
             }
         };
@@ -693,9 +693,12 @@
             }
             
             const p = document.createElement('p');
-            p.className = isPC ? 'text-gray-800' : 'text-sm';
+            // 改行を含むメッセージに対応
+            p.style.whiteSpace = 'pre-wrap';
             if (message.type === 'user') {
-                p.className = isPC ? '' : 'text-sm';
+                p.className = isPC ? 'text-white' : 'text-sm text-white';
+            } else {
+                p.className = isPC ? 'text-gray-800' : 'text-sm text-gray-800';
             }
             p.textContent = message.text;
             
@@ -750,6 +753,20 @@
             }
         }
 
+        // ボタンのアクティブ状態を更新
+        function updateButtonStates(scenarioKey, isMobile) {
+            const buttons = document.querySelectorAll(`.scenario-btn[data-mobile="${isMobile}"]`);
+            buttons.forEach(btn => {
+                if (btn.dataset.scenario === scenarioKey) {
+                    btn.classList.remove('bg-gray-200', 'text-gray-700');
+                    btn.classList.add('bg-green-500', 'text-white');
+                } else {
+                    btn.classList.remove('bg-green-500', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                }
+            });
+        }
+
         // ページ読み込み時の処理
         window.addEventListener('load', () => {
             // 初期シナリオを表示
@@ -758,21 +775,16 @@
                 changeScenario('beauty', true);
             }, 500);
             
-            // セレクトボックスのイベントリスナー
-            const pcSelect = document.getElementById('pc-scenario-select');
-            const mobileSelect = document.getElementById('mobile-scenario-select');
-            
-            if (pcSelect) {
-                pcSelect.addEventListener('change', (e) => {
-                    changeScenario(e.target.value, true);
+            // ボタンのイベントリスナー
+            const buttons = document.querySelectorAll('.scenario-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const scenarioKey = e.target.dataset.scenario;
+                    const isMobile = e.target.dataset.mobile === 'true';
+                    changeScenario(scenarioKey, !isMobile);
+                    updateButtonStates(scenarioKey, isMobile);
                 });
-            }
-            
-            if (mobileSelect) {
-                mobileSelect.addEventListener('change', (e) => {
-                    changeScenario(e.target.value, false);
-                });
-            }
+            });
         });
 
         // スムーススクロール
