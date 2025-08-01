@@ -744,13 +744,21 @@
         function changeScenario(scenarioKey, isPC = false) {
             const scenario = scenarios[scenarioKey];
             if (isPC) {
-                document.querySelector('.pc-chat-title').textContent = scenario.title;
-                document.querySelector('.pc-chat-icon').textContent = scenario.icon;
-                animateChat('pc-chat-demo', scenario, true);
+                const titleElem = document.querySelector('.pc-chat-title');
+                const iconElem = document.querySelector('.pc-chat-icon');
+                if (titleElem && iconElem) {
+                    titleElem.textContent = scenario.title;
+                    iconElem.textContent = scenario.icon;
+                    animateChat('pc-chat-demo', scenario, true);
+                }
             } else {
-                document.querySelector('.mobile-chat-title').textContent = scenario.title;
-                document.querySelector('.mobile-chat-icon').textContent = scenario.icon;
-                animateChat('mobile-chat-demo', scenario, false);
+                const titleElem = document.querySelector('.mobile-chat-title');
+                const iconElem = document.querySelector('.mobile-chat-icon');
+                if (titleElem && iconElem) {
+                    titleElem.textContent = scenario.title;
+                    iconElem.textContent = scenario.icon;
+                    animateChat('mobile-chat-demo', scenario, false);
+                }
             }
         }
 
@@ -768,17 +776,30 @@
             });
         }
 
-        // ページ読み込み時の処理
-        window.addEventListener('load', () => {
-            console.log('ページが読み込まれました');
-            // 初期シナリオを表示
-            setTimeout(() => {
+        // 初期化関数
+        function initializeChat() {
+            // モバイルチャットが表示されているか確認
+            const mobileChat = document.getElementById('mobile-chat-demo');
+            const pcChat = document.getElementById('pc-chat-demo');
+            
+            if (mobileChat && window.getComputedStyle(mobileChat.parentElement.parentElement).display !== 'none') {
+                console.log('モバイルチャットを初期化');
                 changeScenario('beauty', false);
-                changeScenario('beauty', true);
-                // 初期状態のボタンをアクティブに
                 updateButtonStates('beauty', true);
+            }
+            
+            if (pcChat && window.getComputedStyle(pcChat.parentElement.parentElement).display !== 'none') {
+                console.log('PCチャットを初期化');
+                changeScenario('beauty', true);
                 updateButtonStates('beauty', false);
-            }, 500);
+            }
+        }
+
+        // ページ読み込み時の処理
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('DOMContentLoaded イベント発火');
+            // 少し遅延を入れて初期化
+            setTimeout(initializeChat, 500);
             
             // ボタンのイベントリスナー
             const buttons = document.querySelectorAll('.scenario-btn');
@@ -790,6 +811,17 @@
                     updateButtonStates(scenarioKey, isMobile);
                 });
             });
+        });
+        
+        // フォールバック: loadイベントでも初期化
+        window.addEventListener('load', () => {
+            console.log('load イベント発火');
+            // チャットがまだ初期化されていない場合のみ実行
+            const mobileMessages = document.querySelectorAll('#mobile-chat-demo > div');
+            const pcMessages = document.querySelectorAll('#pc-chat-demo > div');
+            if (mobileMessages.length === 0 && pcMessages.length === 0) {
+                setTimeout(initializeChat, 500);
+            }
         });
 
         // スムーススクロール
