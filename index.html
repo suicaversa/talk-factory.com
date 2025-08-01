@@ -66,6 +66,22 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+        
+        .chat-message {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -105,17 +121,40 @@
                         <span class="text-green-300">顧客ロイヤリティ</span><span class="block sm:inline">を最大化</span>
                     </h1>
                     
-                    <!-- モバイル用動画 -->
+                    <!-- モバイル用LINEデモ -->
                     <div class="lg:hidden mb-8">
-                        <div class="bg-white bg-opacity-20 rounded-lg p-2 w-full">
-                            <video 
-                                class="w-full h-auto rounded-lg shadow-lg" 
-                                controls 
-                                preload="metadata"
-                                aria-label="トークファクトリーのデモ動画">
-                                <source src="/assets/videos/demo.mp4" type="video/mp4">
-                                <p class="text-center text-white">お使いのブラウザは動画の再生に対応していません。</p>
-                            </video>
+                        <div class="bg-white rounded-2xl shadow-xl p-4 max-w-sm mx-auto">
+                            <div class="bg-gray-100 rounded-t-xl p-3 flex items-center">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">店</div>
+                                <span class="ml-2 font-bold text-gray-800">美容室トークファクトリー</span>
+                            </div>
+                            <div class="bg-gray-50 p-4 h-96 overflow-y-auto space-y-3" id="mobile-chat-demo">
+                                <div class="flex justify-start">
+                                    <div class="bg-white rounded-2xl rounded-tl-none p-3 max-w-[80%] shadow">
+                                        <p class="text-sm">こんにちは！ご予約のご相談ですか？</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end">
+                                    <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-3 max-w-[80%]">
+                                        <p class="text-sm">はい、カットとカラーをお願いしたいです</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-start">
+                                    <div class="bg-white rounded-2xl rounded-tl-none p-3 max-w-[80%] shadow">
+                                        <p class="text-sm">かしこまりました。田中様ですね。前回から2ヶ月ほど経っていますが、今回もいつものブラウン系のカラーでよろしいですか？</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end">
+                                    <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-3 max-w-[80%]">
+                                        <p class="text-sm">今回は少し明るめにしたいです</p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-start">
+                                    <div class="bg-white rounded-2xl rounded-tl-none p-3 max-w-[80%] shadow">
+                                        <p class="text-sm">承知いたしました！明るめのブラウンですね。ご希望の日時はございますか？今週ですと、金曜の午後と土曜の午前中に空きがあります。</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -147,19 +186,52 @@
                     </div>
                 </div>
                 
-                <!-- PC用動画 -->
+                <!-- PC用LINEデモ -->
                 <div class="hidden lg:flex w-full lg:w-1/2 justify-center">
-                    <div class="bg-white bg-opacity-20 rounded-lg p-2 w-full max-w-[700px]">
-                        <!-- 動画エリア -->
-                        <div class="relative">
-                            <video 
-                                class="w-full h-auto rounded-lg shadow-lg" 
-                                controls 
-                                preload="metadata"
-                                aria-label="トークファクトリーのデモ動画">
-                                <source src="/assets/videos/demo.mp4" type="video/mp4">
-                                <p class="text-center text-white">お使いのブラウザは動画の再生に対応していません。</p>
-                            </video>
+                    <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-[400px]">
+                        <div class="bg-gray-100 rounded-t-xl p-4 flex items-center">
+                            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">店</div>
+                            <span class="ml-3 font-bold text-gray-800 text-lg">美容室トークファクトリー</span>
+                        </div>
+                        <div class="bg-gray-50 p-4 h-[500px] overflow-y-auto space-y-4" id="pc-chat-demo">
+                            <div class="flex justify-start">
+                                <div class="bg-white rounded-2xl rounded-tl-none p-4 max-w-[75%] shadow">
+                                    <p class="text-gray-800">こんにちは！ご予約のご相談ですか？</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-4 max-w-[75%]">
+                                    <p>はい、カットとカラーをお願いしたいです</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-white rounded-2xl rounded-tl-none p-4 max-w-[75%] shadow">
+                                    <p class="text-gray-800">かしこまりました。田中様ですね。前回から2ヶ月ほど経っていますが、今回もいつものブラウン系のカラーでよろしいですか？</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-4 max-w-[75%]">
+                                    <p>今回は少し明るめにしたいです</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-white rounded-2xl rounded-tl-none p-4 max-w-[75%] shadow">
+                                    <p class="text-gray-800">承知いたしました！明るめのブラウンですね。ご希望の日時はございますか？今週ですと、金曜の午後と土曜の午前中に空きがあります。</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-4 max-w-[75%]">
+                                    <p>金曜の15時はどうですか？</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-white rounded-2xl rounded-tl-none p-4 max-w-[75%] shadow">
+                                    <p class="text-gray-800">金曜日の15時で承りました！カットとカラーで約2時間半ほどお時間をいただきます。当日お待ちしております😊</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t bg-white rounded-b-xl">
+                            <p class="text-xs text-gray-500 text-center">AIが顧客情報を参照して自動返信</p>
                         </div>
                     </div>
                 </div>
@@ -591,9 +663,28 @@
     </footer>
 
     <script>
-
-
-
+        // チャットアニメーション
+        function animateChat() {
+            const pcMessages = document.querySelectorAll('#pc-chat-demo > div');
+            const mobileMessages = document.querySelectorAll('#mobile-chat-demo > div');
+            
+            // PC版のアニメーション
+            pcMessages.forEach((message, index) => {
+                message.classList.add('chat-message');
+                message.style.animationDelay = `${index * 0.8}s`;
+            });
+            
+            // モバイル版のアニメーション
+            mobileMessages.forEach((message, index) => {
+                message.classList.add('chat-message');
+                message.style.animationDelay = `${index * 0.8}s`;
+            });
+        }
+        
+        // ページ読み込み時にアニメーションを開始
+        window.addEventListener('load', () => {
+            setTimeout(animateChat, 500);
+        });
 
         // スムーススクロール
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -608,7 +699,6 @@
                 }
             });
         });
-
     </script>
 </body>
 </html>
