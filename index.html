@@ -677,7 +677,6 @@
             }
         };
 
-        let currentMessageIndex = 0;
         let animationTimer = null;
 
         // メッセージを作成する関数
@@ -712,15 +711,18 @@
         function animateChat(containerId, scenario, isPC = false) {
             const container = document.getElementById(containerId);
             container.innerHTML = '';
-            currentMessageIndex = 0;
             
+            // 既存のタイマーをクリア
             if (animationTimer) {
                 clearInterval(animationTimer);
+                animationTimer = null;
             }
             
+            let messageIndex = 0;
+            
             animationTimer = setInterval(() => {
-                if (currentMessageIndex < scenario.messages.length) {
-                    const message = createMessage(scenario.messages[currentMessageIndex], isPC);
+                if (messageIndex < scenario.messages.length) {
+                    const message = createMessage(scenario.messages[messageIndex], isPC);
                     container.appendChild(message);
                     
                     // 自動スクロール
@@ -728,13 +730,11 @@
                         container.scrollTop = container.scrollHeight;
                     }, 100);
                     
-                    currentMessageIndex++;
+                    messageIndex++;
                 } else {
+                    // 全メッセージ表示完了後、タイマーをクリア
                     clearInterval(animationTimer);
-                    // 最後まで表示したら、3秒後に最初から再生
-                    setTimeout(() => {
-                        animateChat(containerId, scenario, isPC);
-                    }, 3000);
+                    animationTimer = null;
                 }
             }, 1200);
         }
