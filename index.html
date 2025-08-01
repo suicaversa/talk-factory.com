@@ -124,36 +124,20 @@
                     <!-- モバイル用LINEデモ -->
                     <div class="lg:hidden mb-8">
                         <div class="bg-white rounded-2xl shadow-xl p-4 max-w-sm mx-auto">
-                            <div class="bg-gray-100 rounded-t-xl p-3 flex items-center">
-                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">店</div>
-                                <span class="ml-2 font-bold text-gray-800">美容室トークファクトリー</span>
+                            <div class="bg-gray-100 rounded-t-xl p-3">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mobile-chat-icon">店</div>
+                                    <span class="ml-2 font-bold text-gray-800 mobile-chat-title">美容室トークファクトリー</span>
+                                </div>
+                                <select class="w-full text-xs bg-white border border-gray-300 rounded px-2 py-1" id="mobile-scenario-select">
+                                    <option value="beauty">美容室の予約</option>
+                                    <option value="restaurant">飲食店の予約</option>
+                                    <option value="clinic">クリニックの問診</option>
+                                    <option value="ec">ECの商品相談</option>
+                                </select>
                             </div>
                             <div class="bg-gray-50 p-4 h-96 overflow-y-auto space-y-3" id="mobile-chat-demo">
-                                <div class="flex justify-start">
-                                    <div class="bg-white rounded-2xl rounded-tl-none p-3 max-w-[80%] shadow">
-                                        <p class="text-sm">こんにちは！ご予約のご相談ですか？</p>
-                                    </div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-3 max-w-[80%]">
-                                        <p class="text-sm">はい、カットとカラーをお願いしたいです</p>
-                                    </div>
-                                </div>
-                                <div class="flex justify-start">
-                                    <div class="bg-white rounded-2xl rounded-tl-none p-3 max-w-[80%] shadow">
-                                        <p class="text-sm">かしこまりました。田中様ですね。前回から2ヶ月ほど経っていますが、今回もいつものブラウン系のカラーでよろしいですか？</p>
-                                    </div>
-                                </div>
-                                <div class="flex justify-end">
-                                    <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-3 max-w-[80%]">
-                                        <p class="text-sm">今回は少し明るめにしたいです</p>
-                                    </div>
-                                </div>
-                                <div class="flex justify-start">
-                                    <div class="bg-white rounded-2xl rounded-tl-none p-3 max-w-[80%] shadow">
-                                        <p class="text-sm">承知いたしました！明るめのブラウンですね。ご希望の日時はございますか？今週ですと、金曜の午後と土曜の午前中に空きがあります。</p>
-                                    </div>
-                                </div>
+                                <!-- チャットメッセージはJSで動的に生成 -->
                             </div>
                         </div>
                     </div>
@@ -189,46 +173,20 @@
                 <!-- PC用LINEデモ -->
                 <div class="hidden lg:flex w-full lg:w-1/2 justify-center">
                     <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-[400px]">
-                        <div class="bg-gray-100 rounded-t-xl p-4 flex items-center">
-                            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">店</div>
-                            <span class="ml-3 font-bold text-gray-800 text-lg">美容室トークファクトリー</span>
+                        <div class="bg-gray-100 rounded-t-xl p-4">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold pc-chat-icon">店</div>
+                                <span class="ml-3 font-bold text-gray-800 text-lg pc-chat-title">美容室トークファクトリー</span>
+                            </div>
+                            <select class="w-full text-sm bg-white border border-gray-300 rounded px-3 py-2" id="pc-scenario-select">
+                                <option value="beauty">美容室の予約</option>
+                                <option value="restaurant">飲食店の予約</option>
+                                <option value="clinic">クリニックの問診</option>
+                                <option value="ec">ECの商品相談</option>
+                            </select>
                         </div>
                         <div class="bg-gray-50 p-4 h-[500px] overflow-y-auto space-y-4" id="pc-chat-demo">
-                            <div class="flex justify-start">
-                                <div class="bg-white rounded-2xl rounded-tl-none p-4 max-w-[75%] shadow">
-                                    <p class="text-gray-800">こんにちは！ご予約のご相談ですか？</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-end">
-                                <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-4 max-w-[75%]">
-                                    <p>はい、カットとカラーをお願いしたいです</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-start">
-                                <div class="bg-white rounded-2xl rounded-tl-none p-4 max-w-[75%] shadow">
-                                    <p class="text-gray-800">かしこまりました。田中様ですね。前回から2ヶ月ほど経っていますが、今回もいつものブラウン系のカラーでよろしいですか？</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-end">
-                                <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-4 max-w-[75%]">
-                                    <p>今回は少し明るめにしたいです</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-start">
-                                <div class="bg-white rounded-2xl rounded-tl-none p-4 max-w-[75%] shadow">
-                                    <p class="text-gray-800">承知いたしました！明るめのブラウンですね。ご希望の日時はございますか？今週ですと、金曜の午後と土曜の午前中に空きがあります。</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-end">
-                                <div class="bg-green-500 text-white rounded-2xl rounded-tr-none p-4 max-w-[75%]">
-                                    <p>金曜の15時はどうですか？</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-start">
-                                <div class="bg-white rounded-2xl rounded-tl-none p-4 max-w-[75%] shadow">
-                                    <p class="text-gray-800">金曜日の15時で承りました！カットとカラーで約2時間半ほどお時間をいただきます。当日お待ちしております😊</p>
-                                </div>
-                            </div>
+                            <!-- チャットメッセージはJSで動的に生成 -->
                         </div>
                         <div class="p-4 border-t bg-white rounded-b-xl">
                             <p class="text-xs text-gray-500 text-center">AIが顧客情報を参照して自動返信</p>
@@ -663,27 +621,158 @@
     </footer>
 
     <script>
-        // チャットアニメーション
-        function animateChat() {
-            const pcMessages = document.querySelectorAll('#pc-chat-demo > div');
-            const mobileMessages = document.querySelectorAll('#mobile-chat-demo > div');
+        // チャットシナリオデータ
+        const scenarios = {
+            beauty: {
+                title: '美容室トークファクトリー',
+                icon: '店',
+                messages: [
+                    { type: 'bot', text: 'こんにちは！ご予約のご相談ですか？' },
+                    { type: 'user', text: 'はい、カットとカラーをお願いしたいです' },
+                    { type: 'bot', text: 'かしこまりました。田中様ですね。前回から2ヶ月ほど経っていますが、今回もいつものブラウン系のカラーでよろしいですか？' },
+                    { type: 'user', text: '今回は少し明るめにしたいです' },
+                    { type: 'bot', text: '承知いたしました！明るめのブラウンですね。ご希望の日時はございますか？今週ですと、金曜の午後と土曜の午前中に空きがあります。' },
+                    { type: 'user', text: '金曜の15時はどうですか？' },
+                    { type: 'bot', text: '金曜日の15時で承りました！カットとカラーで約2時間半ほどお時間をいただきます。当日お待ちしております😊' }
+                ]
+            },
+            restaurant: {
+                title: 'レストラン トークファクトリー',
+                icon: '食',
+                messages: [
+                    { type: 'bot', text: 'いらっしゃいませ！ご予約を承ります。' },
+                    { type: 'user', text: '今週の土曜日、19時から4名でお願いします' },
+                    { type: 'bot', text: '土曜日の19時、4名様ですね。山田様、前回は個室をご利用いただきましたが、今回も個室をご希望でしょうか？' },
+                    { type: 'user', text: 'はい、個室でお願いします' },
+                    { type: 'bot', text: '承知いたしました。アレルギーについて確認させてください。前回は海老アレルギーの方がいらっしゃいましたが、今回も同様でしょうか？' },
+                    { type: 'user', text: '今回は大丈夫です' },
+                    { type: 'bot', text: '個室を確保いたしました！土曜日19時にお待ちしております。当日のコース料理もご用意可能です。ご来店をお待ちしております🍷' }
+                ]
+            },
+            clinic: {
+                title: '内科クリニック トークファクトリー',
+                icon: '医',
+                messages: [
+                    { type: 'bot', text: 'こんにちは。本日はどのような症状でお困りですか？' },
+                    { type: 'user', text: '咳が続いていて、診察をお願いしたいです' },
+                    { type: 'bot', text: '咳の症状ですね。いつ頃から続いていますか？また、発熱はございますか？' },
+                    { type: 'user', text: '3日前からで、熱は37.5度くらいです' },
+                    { type: 'bot', text: '3日前から咳と微熱があるのですね。本日の15:30に空きがございます。鈴木様の保険証は前回から変更ございませんか？' },
+                    { type: 'user', text: '変更ありません。15:30でお願いします' },
+                    { type: 'bot', text: '15:30で予約を承りました。念のため、お薬手帳をお持ちください。症状が悪化した場合は、すぐにご連絡ください。お大事になさってください🏥' }
+                ]
+            },
+            ec: {
+                title: 'ファッションEC トークファクトリー',
+                icon: '服',
+                messages: [
+                    { type: 'bot', text: 'こんにちは！商品についてのご相談ですか？' },
+                    { type: 'user', text: 'ワンピースを探しています' },
+                    { type: 'bot', text: '佐藤様、前回は花柄のワンピースをご購入いただきましたね。今回はどのようなスタイルをお探しですか？' },
+                    { type: 'user', text: 'オフィスでも着られるシンプルなものがいいです' },
+                    { type: 'bot', text: 'オフィスカジュアルですね！佐藤様のサイズMで、ネイビーとグレーの新作がございます。前回同様、膝丈のものがお好みでしょうか？' },
+                    { type: 'user', text: 'はい、膝丈でネイビーを見せてください' },
+                    { type: 'bot', text: '人気のネイビーワンピースをご紹介します！[商品リンク] ストレッチ素材で着心地も抜群です。いつものように送料無料でお届けします。いかがでしょうか？👗' }
+                ]
+            }
+        };
+
+        let currentMessageIndex = 0;
+        let animationTimer = null;
+
+        // メッセージを作成する関数
+        function createMessage(message, isPC = false) {
+            const div = document.createElement('div');
+            div.className = `flex justify-${message.type === 'user' ? 'end' : 'start'} chat-message`;
             
-            // PC版のアニメーション
-            pcMessages.forEach((message, index) => {
-                message.classList.add('chat-message');
-                message.style.animationDelay = `${index * 0.8}s`;
-            });
+            const messageDiv = document.createElement('div');
+            if (message.type === 'user') {
+                messageDiv.className = `bg-green-500 text-white rounded-2xl rounded-tr-none ${isPC ? 'p-4' : 'p-3'} max-w-[${isPC ? '75' : '80'}%]`;
+            } else {
+                messageDiv.className = `bg-white rounded-2xl rounded-tl-none ${isPC ? 'p-4' : 'p-3'} max-w-[${isPC ? '75' : '80'}%] shadow`;
+            }
             
-            // モバイル版のアニメーション
-            mobileMessages.forEach((message, index) => {
-                message.classList.add('chat-message');
-                message.style.animationDelay = `${index * 0.8}s`;
-            });
+            const p = document.createElement('p');
+            p.className = isPC ? 'text-gray-800' : 'text-sm';
+            if (message.type === 'user') {
+                p.className = isPC ? '' : 'text-sm';
+            }
+            p.textContent = message.text;
+            
+            messageDiv.appendChild(p);
+            div.appendChild(messageDiv);
+            
+            return div;
         }
-        
-        // ページ読み込み時にアニメーションを開始
+
+        // チャットをアニメーション表示する関数
+        function animateChat(containerId, scenario, isPC = false) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            currentMessageIndex = 0;
+            
+            if (animationTimer) {
+                clearInterval(animationTimer);
+            }
+            
+            animationTimer = setInterval(() => {
+                if (currentMessageIndex < scenario.messages.length) {
+                    const message = createMessage(scenario.messages[currentMessageIndex], isPC);
+                    container.appendChild(message);
+                    
+                    // 自動スクロール
+                    setTimeout(() => {
+                        container.scrollTop = container.scrollHeight;
+                    }, 100);
+                    
+                    currentMessageIndex++;
+                } else {
+                    clearInterval(animationTimer);
+                    // 最後まで表示したら、3秒後に最初から再生
+                    setTimeout(() => {
+                        animateChat(containerId, scenario, isPC);
+                    }, 3000);
+                }
+            }, 1200);
+        }
+
+        // シナリオ変更時の処理
+        function changeScenario(scenarioKey, isPC = false) {
+            const scenario = scenarios[scenarioKey];
+            if (isPC) {
+                document.querySelector('.pc-chat-title').textContent = scenario.title;
+                document.querySelector('.pc-chat-icon').textContent = scenario.icon;
+                animateChat('pc-chat-demo', scenario, true);
+            } else {
+                document.querySelector('.mobile-chat-title').textContent = scenario.title;
+                document.querySelector('.mobile-chat-icon').textContent = scenario.icon;
+                animateChat('mobile-chat-demo', scenario, false);
+            }
+        }
+
+        // ページ読み込み時の処理
         window.addEventListener('load', () => {
-            setTimeout(animateChat, 500);
+            // 初期シナリオを表示
+            setTimeout(() => {
+                changeScenario('beauty', false);
+                changeScenario('beauty', true);
+            }, 500);
+            
+            // セレクトボックスのイベントリスナー
+            const pcSelect = document.getElementById('pc-scenario-select');
+            const mobileSelect = document.getElementById('mobile-scenario-select');
+            
+            if (pcSelect) {
+                pcSelect.addEventListener('change', (e) => {
+                    changeScenario(e.target.value, true);
+                });
+            }
+            
+            if (mobileSelect) {
+                mobileSelect.addEventListener('change', (e) => {
+                    changeScenario(e.target.value, false);
+                });
+            }
         });
 
         // スムーススクロール
