@@ -773,6 +773,9 @@
             setTimeout(() => {
                 changeScenario('beauty', false);
                 changeScenario('beauty', true);
+                // 初期状態のボタンをアクティブに
+                updateButtonStates('beauty', true);
+                updateButtonStates('beauty', false);
             }, 500);
             
             // ボタンのイベントリスナー
