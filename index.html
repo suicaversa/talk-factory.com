@@ -256,7 +256,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">料金プラン</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">すべての機能が使えるシンプルな料金体系。固定メッセージは無制限、AI生成メッセージ数に応じてプランをお選びください。</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">すべての機能が使えるシンプルな料金体系。固定メッセージは無制限、AIクレジットに応じてプランをお選びください。</p>
             </div>
 
             <div class="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-6 justify-center">
@@ -277,7 +277,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>月間100のAI生成メッセージ</span>
+                            <span>月間100AIクレジット</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
@@ -319,7 +319,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>月間5,000のAI生成メッセージ</span>
+                            <span>月間5,000AIクレジット</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
@@ -356,7 +356,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>月間30,000のAI生成メッセージ</span>
+                            <span>月間30,000AIクレジット</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
@@ -393,7 +393,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>月間100,000のAI生成メッセージ</span>
+                            <span>月間100,000AIクレジット</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
@@ -420,22 +420,22 @@
 
             <!-- 追加メッセージ情報 -->
             <div class="mt-16 bg-gray-50 rounded-xl p-8">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">追加メッセージ料金</h3>
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">追加AIクレジット料金</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <div class="bg-white rounded-lg p-6 shadow">
                         <h4 class="text-xl font-bold mb-4 text-center">従量課金</h4>
                         <ul class="space-y-3">
                             <li class="flex items-center justify-between">
-                                <span>1,000メッセージ</span>
+                                <span>1,000AIクレジット</span>
                                 <span class="font-bold">¥1,000</span>
                             </li>
                             <li class="flex items-center justify-between">
-                                <span>10,000メッセージ</span>
-                                <span class="font-bold">¥9,000<span class="text-sm text-gray-600">(¥100/通→¥90/通)</span></span>
+                                <span>10,000AIクレジット</span>
+                                <span class="font-bold">¥9,000<span class="text-sm text-gray-600">(¥1/クレジット→¥0.9/クレジット)</span></span>
                             </li>
                             <li class="flex items-center justify-between">
-                                <span>50,000メッセージ</span>
-                                <span class="font-bold">¥40,000<span class="text-sm text-gray-600">(¥80/通)</span></span>
+                                <span>50,000AIクレジット</span>
+                                <span class="font-bold">¥40,000<span class="text-sm text-gray-600">(¥0.8/クレジット)</span></span>
                             </li>
                         </ul>
                     </div>
@@ -448,7 +448,11 @@
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-info-circle text-green-500 mr-2 mt-1"></i>
-                                <span>AI生成メッセージのみ月間制限あり</span>
+                                <span>AIクレジットは受信解析・返信生成で消費</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-green-500 mr-2 mt-1"></i>
+                                <span>1対話 = 約2クレジット消費（受信解析1 + 返信生成1）</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-info-circle text-green-500 mr-2 mt-1"></i>
