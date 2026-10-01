@@ -135,7 +135,7 @@ colors: {
 
 ## 📄 ライセンス
 
-© 2025 Grouse Inc. All rights reserved.
+© 2025 合同会社グラウス (Grouse LLC). All rights reserved.
 
 ## 📞 お問い合わせ
 
